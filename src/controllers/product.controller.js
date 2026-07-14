@@ -27,7 +27,11 @@ const createProduct = async (req, res) => {
 const getAllProducts = async (req, res) => {
     try {
 
-        const products = await productService.getAllProducts();
+        // const products = await productService.getAllProducts(); ..it is for all db check
+        // const search = req.query.search;
+        // const products = await productService.getAllProducts(search);// search a peticular product.
+        const { search, featured, stock, minPrice, maxPrice } = req.query;
+        const products = await productService.getAllProducts( search, featured, stock, minPrice, maxPrice)
 
         return res.status(200).json({
             success: true,
