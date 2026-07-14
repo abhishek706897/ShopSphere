@@ -110,10 +110,15 @@ const getAllProducts = async (
         }
 
     }
+    page = Number(page) || 1;
+    limit = Number(limit) || 10;
+    const skip = (page - 1) * limit;
 
     return await Product.find(filter)
         .populate("category", "name slug")
         .sort(sortOption)
+        .skip(skip)
+        .limit(limit)
 };
 
 

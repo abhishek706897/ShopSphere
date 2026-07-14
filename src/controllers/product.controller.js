@@ -30,8 +30,8 @@ const getAllProducts = async (req, res) => {
         // const products = await productService.getAllProducts(); ..it is for all db check
         // const search = req.query.search;
         // const products = await productService.getAllProducts(search);// search a peticular product.
-        const { search, featured, stock, minPrice, maxPrice } = req.query;
-        const products = await productService.getAllProducts( search, featured, stock, minPrice, maxPrice)
+        const { search, featured, stock, minPrice, maxPrice, sort, page, limit } = req.query;
+        const products = await productService.getAllProducts( search, featured, stock, minPrice, maxPrice, sort, page, limit)
 
         return res.status(200).json({
             success: true,
