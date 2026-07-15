@@ -3,6 +3,7 @@ const cros=require("cors")
 const userRoutes = require("./routes/user.routes");
 const productRoutes = require("./routes/product.route");
 const categoryRoutes = require("./routes/category.route");
+const cartRoutes=require("./routes/cart.route")
 const app=express();
 
 app.use(express.json())
@@ -11,6 +12,7 @@ app.use(cros())
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/categories", categoryRoutes)
+app.use("/api/cart",cartRoutes)
 
 
 
