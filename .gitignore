@@ -1,2 +1,12 @@
 node_modules/
+<<<<<<< HEAD
 .env
+=======
+.env
+.env.*
+!.env.example
+dist/
+build/
+*.log
+.DS_Store
+>>>>>>> 1d570bbbf39b6c490a8adf7a550fc33a1e5ce1a1
